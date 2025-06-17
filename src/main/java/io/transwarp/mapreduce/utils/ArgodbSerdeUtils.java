@@ -34,7 +34,7 @@ public class ArgodbSerdeUtils {
 
   public static Object convertStringValueToObject(String columnName, String value, HCatSchema schema) throws IOException {
     try {
-      HCatFieldSchema.Type hCatType = schema.get(columnName).getType();
+      HCatFieldSchema.Type hCatType = HCatFieldSchema.Type.getPrimitiveHType(schema.get(columnName).getTypeInfo());
       switch (hCatType) {
         case BOOLEAN:
           return Boolean.parseBoolean(value);
