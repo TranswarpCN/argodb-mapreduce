@@ -34,7 +34,6 @@ public class MetaUtils {
       ArgoDBConfig argoDBConfig = ArgoDBConfig.builder().url(url).user(user).passwd(passwd).build();
       ArgoDBSinkConfig argoDBSinkConfig = ArgoDBSinkConfig.builder()
           .argoConfig(argoDBConfig)
-          .useAutoFileClean(false)
           .isReadMode(true)
           .build();
 
@@ -69,7 +68,7 @@ public class MetaUtils {
 
       return sinkTable.holodeskTable();
     } catch (Exception e) {
-      LOGGER.error("Get argodb table info failed: " + e.getMessage(), e);
+      LOGGER.error("Get argodb table info failed: {}", e.getMessage(), e);
       throw new IOException(e);
     } finally {
       try {

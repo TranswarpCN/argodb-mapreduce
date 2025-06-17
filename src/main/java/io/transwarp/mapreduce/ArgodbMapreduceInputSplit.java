@@ -16,8 +16,6 @@ import java.util.List;
 
 public class ArgodbMapreduceInputSplit extends InputSplit implements Serializable {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(ArgodbMapreduceInputSplit.class);
-
   private List<CorePartition> corePartitions = new ArrayList<>(1);
   private String partDefine;
 
