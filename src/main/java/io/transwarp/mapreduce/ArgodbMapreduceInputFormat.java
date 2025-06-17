@@ -57,7 +57,6 @@ public class ArgodbMapreduceInputFormat extends InputFormat {
     RWTransaction txn = null;
     try {
       Configuration config = job.getConfiguration();
-      //config.set("io.serializations", JavaSerialization.class.getName() + "," + WritableSerialization.class.getName());
       config.set(Configs.ARGODB_TABLE_NAME, databaseName + "." + tableName);
       config.set(Configs.ARGODB_FILTER, filter);
       try {
